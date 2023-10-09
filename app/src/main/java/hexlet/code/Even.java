@@ -9,17 +9,16 @@ class Even {
         System.out.print("May I have your name? ");
         String userName = scannedName.next();
         System.out.println("Hello, " + userName + "!");
-        scannedName.close();
         System.out.println("Answer 'yes' if the number is even, otherwise answer 'no'.");
-        Scanner scannedAnswer = new Scanner(System.in);
         for (var i = 0; i < 3; i++) {
             int num = getRandomNumber();
+            var correctAnswer = evenOrNot(num);
+            Scanner scannedAnswer = new Scanner(System.in);
             System.out.println("Question: " + num);
             System.out.print("Your answer: ");
-            String answer = scannedAnswer.next();
-            var correctAnswer = evenOrNot(num);
-            if (!answer.equals(correctAnswer)) {
-                System.out.println("'" + answer + "' is wrong answer ;(. Correct answer was '" + correctAnswer + "'.");
+            String userAnswer = scannedAnswer.next();
+            if (!userAnswer.equals(correctAnswer)) {
+                System.out.println("'" + userAnswer + "' is wrong answer ;(. Correct answer was '" + correctAnswer + "'.");
                 System.out.println("Let's try again, " + userName + "!");
                 break;
             }
@@ -28,10 +27,10 @@ class Even {
                 System.out.println("Congratulations, " + userName + "!");
             }
         }
-        scannedAnswer.close();
+        scannedName.close();
     }
     static int getRandomNumber() {
-        int num = Math.random() * 100000;
+        int num = (int) (Math.random() * 100000);
         return num;
     }
     static String evenOrNot(int num) {
