@@ -21,7 +21,7 @@ class App {
                 Even.play();
                 break;
             default:
-                System.out.println("You choiced something strange. Try again anoyher time. Goodbye!");
+                System.out.println("You chose something strange. Try again another time. Goodbye!");
         }
         scannedNumber.close();
     }
