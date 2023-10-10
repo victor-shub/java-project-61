@@ -1,5 +1,6 @@
 package hexlet.code;
 
+import java.util.Random;
 import java.util.Scanner;
 
 class Even {
@@ -29,7 +30,8 @@ class Even {
         }
     }
     static int getRandomNumber() {
-        int num = (int) (Math.random() * 100000);
+        Random r = new Random();
+        var num = r.nextInt(1000);
         return num;
     }
     static String evenOrNot(int num) {
