@@ -5,8 +5,6 @@ import hexlet.code.Game;
 import hexlet.code.Engine;
 
 public class Even implements Game {
-    private String question;
-    private String answer;
     public static void play() {
         Even game = new Even();
         var task = "Answer 'yes' if the number is even, otherwise answer 'no'.";
@@ -18,16 +16,14 @@ public class Even implements Game {
         return num;
     }
     public String getQuestion() {
-        this.question = "" + getRandomNumber();
+        var question = "" + getRandomNumber();
         return question;
     }
     public String questionToAnswer(String question) {
         var num = Integer.parseInt(question);
         if (num % 2 == 0) {
-            this.answer = "yes";
-        } else {
-            this.answer = "no";
+            return "yes";
         }
-        return answer;
+        return "no";
     }
 }
