@@ -1,11 +1,13 @@
-package hexlet.code;
+package hexlet.code.games;
 
 import java.util.Random;
+import hexlet.code.Game;
+import hexlet.code.Engine;
 
-class Even implements Game {
+public class Even implements Game {
     private String question;
     private String answer;
-    static void play() {
+    public static void play() {
         Even game = new Even();
         var task = "Answer 'yes' if the number is even, otherwise answer 'no'.";
         Engine.getGameBody(game, task);
