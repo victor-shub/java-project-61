@@ -27,7 +27,6 @@ class Even {
                 System.out.println("Congratulations, " + userName + "!");
             }
         }
-        scannedName.close();
     }
     static int getRandomNumber() {
         int num = (int) (Math.random() * 100000);
