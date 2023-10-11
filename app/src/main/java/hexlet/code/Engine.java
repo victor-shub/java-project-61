@@ -12,7 +12,7 @@ public class Engine {
         System.out.println(task);
         for (var i = 0; i < 3; i++) {
             var question = game.getQuestion();
-            var correctAnswer = game.questionToAnswer(question);
+            var correctAnswer = game.getAnswer();
             Scanner scannedAnswer = new Scanner(System.in);
             System.out.println("Question: " + question);
             System.out.print("Your answer: ");
