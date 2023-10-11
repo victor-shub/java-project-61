@@ -12,7 +12,7 @@ public class Even implements Game {
     }
     static int getRandomNumber() {
         Random r = new Random();
-        var num = r.nextInt(1000);
+        var num = r.nextInt(100);
         return num;
     }
     public String getQuestion() {
