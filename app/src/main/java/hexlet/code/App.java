@@ -21,6 +21,9 @@ class App {
             case "2":
                 Even.play();
                 break;
+            case "3":
+                Calc.play();
+                break;
             default:
                 System.out.println("You chose something strange. Try again another time. Goodbye!");
         }
