@@ -1,6 +1,5 @@
 package hexlet.code.games;
 
-import java.util.Random;
 import hexlet.code.Game;
 import hexlet.code.Engine;
 
