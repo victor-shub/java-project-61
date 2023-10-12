@@ -11,13 +11,13 @@ public class Even implements Game {
         var task = "Answer 'yes' if the number is even, otherwise answer 'no'.";
         Engine.getGameBody(game, task);
     }
-    static int getRandomNumber() {
+    static int getRandomNumber(int bound) {
         Random r = new Random();
-        var num = r.nextInt(100);
+        var num = r.nextInt(bound);
         return num;
     }
     public String getQuestion() {
-        this.number = getRandomNumber();
+        this.number = getRandomNumber(1000);
         var question = "" + number;
         return question;
     }

@@ -13,8 +13,8 @@ public class GCD implements Game {
         Engine.getGameBody(game, task);
     }
     public String getQuestion() {
-        this.firstNum = Even.getRandomNumber();
-        this.secondNum = Even.getRandomNumber();
+        this.firstNum = Even.getRandomNumber(1000);
+        this.secondNum = Even.getRandomNumber(1000);
         var question = firstNum + " " + secondNum;
         return question;
     }
