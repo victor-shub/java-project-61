@@ -4,15 +4,22 @@ import hexlet.code.Game;
 import hexlet.code.Engine;
 
 public class Prime implements Game {
+    private int num;
     public static void play() {
         Prime game = new Prime();
         var task = "Answer 'yes' if given number is prime. Otherwise answer 'no'.";
         Engine.getGameBody(game, task);
     }
     public String getQuestion() {
-        return null;
+        this.num = Even.getRandomNumber(1000);
+        return "" + num;
     }
     public String getAnswer() {
-        return null;
+        if (num % 2 == 0) return "no";
+        for(int i = 3; i * i <= num; i += 2) {
+            if(num % i == 0)
+                return "no";
+        }
+        return "yes";
     }
 }
