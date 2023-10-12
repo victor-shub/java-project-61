@@ -10,3 +10,5 @@ GCD:
 [![asciicast](https://asciinema.org/a/OpTcPZIbhz7BLraBrsr3qphFU.svg)](https://asciinema.org/a/OpTcPZIbhz7BLraBrsr3qphFU)
 Progression:
 [![asciicast](https://asciinema.org/a/X7mLKnVpqMmBaAYXOQY0bShFi.svg)](https://asciinema.org/a/X7mLKnVpqMmBaAYXOQY0bShFi)
+Prime:
+[![asciicast](https://asciinema.org/a/6SZPPJekSB293vhTmMZQsQrRJ.svg)](https://asciinema.org/a/6SZPPJekSB293vhTmMZQsQrRJ)
