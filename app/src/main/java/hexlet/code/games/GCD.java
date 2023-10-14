@@ -13,8 +13,9 @@ public final class GCD implements Game {
         Engine.getGameBody(game, task);
     }
     public String getQuestion() {
-        this.firstNum = Even.getRandomNumber(1000);
-        this.secondNum = Even.getRandomNumber(1000);
+        final int gcdBound = 1000;
+        this.firstNum = Even.getRandomNumber(gcdBound);
+        this.secondNum = Even.getRandomNumber(gcdBound);
         var question = firstNum + " " + secondNum;
         return question;
     }

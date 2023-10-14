@@ -11,7 +11,8 @@ public class Engine {
         System.out.println("Hello, " + userName + "!");
         System.out.println(task);
         var wrongAnswerMessage = "' is wrong answer ;(. Correct answer was '";
-        for (var i = 0; i < 3; i++) {
+        final int questionCount = 3;
+        for (var i = 0; i < questionCount; i++) {
             var question = game.getQuestion();
             var correctAnswer = game.getAnswer();
             Scanner scannedAnswer = new Scanner(System.in);
@@ -24,7 +25,7 @@ public class Engine {
                 break;
             }
             System.out.println("Correct!");
-            if (i == 2) {
+            if (i == questionCount - 1) {
                 System.out.println("Congratulations, " + userName + "!");
             }
         }

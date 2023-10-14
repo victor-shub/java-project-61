@@ -13,8 +13,9 @@ public final class Calc implements Game {
         Engine.getGameBody(game, task);
     }
     public String getQuestion() {
-        this.firstNum = Even.getRandomNumber(100);
-        this.secondNum = Even.getRandomNumber(100);
+        final int calcBound = 100;
+        this.firstNum = Even.getRandomNumber(calcBound);
+        this.secondNum = Even.getRandomNumber(calcBound);
         getRandomOperator();
         var question = firstNum + " " + operator + " " + secondNum;
         return question;
@@ -37,7 +38,8 @@ public final class Calc implements Game {
         return "" + answer;
     }
     void getRandomOperator() {
-        var num = Even.getRandomNumber(3);
+        final int operatorCount = 3;
+        var num = Even.getRandomNumber(operatorCount);
         this.operator = switch (num) {
             case 0 -> "+";
             case 1 -> "-";

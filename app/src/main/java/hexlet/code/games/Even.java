@@ -17,7 +17,8 @@ public final class Even implements Game {
         return num;
     }
     public String getQuestion() {
-        this.number = getRandomNumber(1000);
+        final int evenBound = 1000;
+        this.number = getRandomNumber(evenBound);
         var question = "" + number;
         return question;
     }

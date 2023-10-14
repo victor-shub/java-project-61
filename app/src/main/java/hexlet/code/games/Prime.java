@@ -11,7 +11,8 @@ public final class Prime implements Game {
         Engine.getGameBody(game, task);
     }
     public String getQuestion() {
-        this.num = Even.getRandomNumber(1000);
+        final int primeBound = 1000;
+        this.num = Even.getRandomNumber(primeBound);
         return "" + num;
     }
     public String getAnswer() {

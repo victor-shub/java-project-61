@@ -11,9 +11,11 @@ public final class Progression implements Game {
         Engine.getGameBody(game, task);
     }
     public String getQuestion() {
-        var seqLength = 10;
-        var seqNum = Even.getRandomNumber(100);
-        var stepNum = Even.getRandomNumber(10);
+        final int seqLength = 10;
+        final int firstNumBound = 100;
+        final int stepBound = 10;
+        var seqNum = Even.getRandomNumber(firstNumBound);
+        var stepNum = Even.getRandomNumber(stepBound);
         var skipNum = Even.getRandomNumber(seqLength);
         var question = new StringBuilder();
         for (var i = 0; i < seqLength; i++) {
