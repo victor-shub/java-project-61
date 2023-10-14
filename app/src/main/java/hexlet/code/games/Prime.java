@@ -19,7 +19,8 @@ public final class Prime implements Game {
         if (num % 2 == 0) {
             return "no";
         }
-        for (int i = 3; i * i <= num; i += 2) {
+        final int startNum = 3;
+        for (int i = startNum; i * i <= num; i += 2) {
             if (num % i == 0) {
                 return "no";
             }
