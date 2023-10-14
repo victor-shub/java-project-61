@@ -10,6 +10,7 @@ public class Engine {
         String userName = scannedName.next();
         System.out.println("Hello, " + userName + "!");
         System.out.println(task);
+        var wrongAnswerMessage = "' is wrong answer ;(. Correct answer was '";
         for (var i = 0; i < 3; i++) {
             var question = game.getQuestion();
             var correctAnswer = game.getAnswer();
@@ -18,7 +19,7 @@ public class Engine {
             System.out.print("Your answer: ");
             String userAnswer = scannedAnswer.next();
             if (!userAnswer.equals(correctAnswer)) {
-                System.out.println("'" + userAnswer + "' is wrong answer ;(. Correct answer was '" + correctAnswer + "'.");
+                System.out.println("'" + userAnswer + wrongAnswerMessage + correctAnswer + "'.");
                 System.out.println("Let's try again, " + userName + "!");
                 break;
             }

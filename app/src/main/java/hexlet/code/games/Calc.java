@@ -31,6 +31,8 @@ public class Calc implements Game {
             case "*":
                 answer *= secondNum;
                 break;
+            default:
+                break;
         }
         return "" + answer;
     }
