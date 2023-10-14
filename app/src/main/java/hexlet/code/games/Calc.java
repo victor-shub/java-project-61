@@ -3,7 +3,7 @@ package hexlet.code.games;
 import hexlet.code.Game;
 import hexlet.code.Engine;
 
-public class Calc implements Game {
+public final class Calc implements Game {
     private int firstNum;
     private int secondNum;
     private String operator;

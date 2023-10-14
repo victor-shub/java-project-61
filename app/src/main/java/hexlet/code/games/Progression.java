@@ -3,7 +3,7 @@ package hexlet.code.games;
 import hexlet.code.Game;
 import hexlet.code.Engine;
 
-public class Progression implements Game {
+public final class Progression implements Game {
     private int skippedSeqNum;
     public static void play() {
         Progression game = new Progression();

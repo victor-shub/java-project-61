@@ -4,7 +4,7 @@ import java.math.BigInteger;
 import hexlet.code.Game;
 import hexlet.code.Engine;
 
-public class GCD implements Game {
+public final class GCD implements Game {
     private int firstNum;
     private int secondNum;
     public static void play() {

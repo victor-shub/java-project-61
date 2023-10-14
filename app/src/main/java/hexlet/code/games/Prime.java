@@ -3,7 +3,7 @@ package hexlet.code.games;
 import hexlet.code.Game;
 import hexlet.code.Engine;
 
-public class Prime implements Game {
+public final class Prime implements Game {
     private int num;
     public static void play() {
         Prime game = new Prime();
