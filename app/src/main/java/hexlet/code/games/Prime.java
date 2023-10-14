@@ -16,7 +16,7 @@ public final class Prime implements Game {
         return "" + num;
     }
     public String getAnswer() {
-        if (num % 2 == 0) {
+        if (num > 2 && num % 2 == 0) {
             return "no";
         }
         final int startNum = 3;
