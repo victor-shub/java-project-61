@@ -14,9 +14,9 @@ public class Even {
         return num;
     }
     static String[][] generateQuestionsAndAnswers() {
-        String[][] questionsAndAnswers = new String[2][Engine.questionsCount];
+        String[][] questionsAndAnswers = new String[2][Engine.QuestionsCount];
         final int evenBound = 1000;
-        for (var i = 0; i < Engine.questionsCount; i++) {
+        for (var i = 0; i < Engine.QuestionsCount; i++) {
             var num = generateRandomNumber(evenBound);
             questionsAndAnswers[0][i] = "" + num;
             questionsAndAnswers[1][i] = trueOrFalseToYesOrNo(isEven(num));

@@ -8,9 +8,9 @@ public class Calc {
         Engine.getGameBody(generateQuestionsAndAnswers(), task);
     }
     static String[][] generateQuestionsAndAnswers() {
-        String[][] questionsAndAnswers = new String[2][Engine.questionsCount];
+        String[][] questionsAndAnswers = new String[2][Engine.QuestionsCount];
         final int calcBound = 100;
-        for (var i = 0; i < Engine.questionsCount; i++) {
+        for (var i = 0; i < Engine.QuestionsCount; i++) {
             var firstNum = Even.generateRandomNumber(calcBound);
             var secondNum = Even.generateRandomNumber(calcBound);
             var operator = generateRandomOperator();

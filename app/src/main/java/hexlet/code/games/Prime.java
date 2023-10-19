@@ -8,9 +8,9 @@ public final class Prime {
         Engine.getGameBody(generateQuestionsAndAnswers(), task);
     }
     static String[][] generateQuestionsAndAnswers() {
-        String[][] questionsAndAnswers = new String[2][Engine.questionsCount];
+        String[][] questionsAndAnswers = new String[2][Engine.QuestionsCount];
         final int primeBound = 1000;
-        for (var i = 0; i < Engine.questionsCount; i++) {
+        for (var i = 0; i < Engine.QuestionsCount; i++) {
             var num = Even.generateRandomNumber(primeBound);
             questionsAndAnswers[0][i] = "" + num;
             questionsAndAnswers[1][i] = Even.trueOrFalseToYesOrNo(isPrime(num));

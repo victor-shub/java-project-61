@@ -9,12 +9,12 @@ public final class Progression {
     }
 
     static String[][] generateQuestionsAndAnswers() {
-        String[][] questionsAndAnswers = new String[2][Engine.questionsCount];
+        String[][] questionsAndAnswers = new String[2][Engine.QuestionsCount];
         final int seqLength = 10;
         final int firstNumBound = 100;
         final int stepBound = 10;
         var skippedSeqNum = 0;
-        for (var i = 0; i < Engine.questionsCount; i++) {
+        for (var i = 0; i < Engine.QuestionsCount; i++) {
             var seqNum = Even.generateRandomNumber(firstNumBound);
             var stepNum = Even.generateRandomNumber(stepBound);
             var skipNum = Even.generateRandomNumber(seqLength);
