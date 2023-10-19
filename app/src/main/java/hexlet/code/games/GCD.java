@@ -1,28 +1,29 @@
 package hexlet.code.games;
 
 import java.math.BigInteger;
-import hexlet.code.Game;
 import hexlet.code.Engine;
 
-public final class GCD implements Game {
-    private int firstNum;
-    private int secondNum;
+public class GCD {
     public static void play() {
-        GCD game = new GCD();
+        final int gcdQuestionsCount = 3;
         var task = "Find the greatest common divisor of given numbers.";
-        Engine.getGameBody(game, task);
+        Engine.getGameBody(generateQuestionsAndAnswers(gcdQuestionsCount), task);
     }
-    public String getQuestion() {
+    static String[][] generateQuestionsAndAnswers(int questionsCount) {
+        String[][] questionsAndAnswers = new String[2][questionsCount];
         final int gcdBound = 1000;
-        this.firstNum = Even.getRandomNumber(gcdBound);
-        this.secondNum = Even.getRandomNumber(gcdBound);
-        var question = firstNum + " " + secondNum;
-        return question;
+        for (var i = 0; i < questionsCount; i++) {
+            var firstNum = Even.generateRandomNumber(gcdBound);
+            var secondNum = Even.generateRandomNumber(gcdBound);
+            questionsAndAnswers[0][i] = firstNum + " " + secondNum;
+            questionsAndAnswers[1][i] = "" + gcd(firstNum, secondNum);
+        }
+        return questionsAndAnswers;
     }
-    public String getAnswer() {
+    static int gcd(int firstNum, int secondNum) {
         var b1 = BigInteger.valueOf(firstNum);
         var b2 = BigInteger.valueOf(secondNum);
         var gcd = b1.gcd(b2);
-        return "" + gcd.intValue();
+        return gcd.intValue();
     }
 }

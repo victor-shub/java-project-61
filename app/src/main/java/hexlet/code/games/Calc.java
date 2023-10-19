@@ -1,26 +1,26 @@
 package hexlet.code.games;
 
-import hexlet.code.Game;
 import hexlet.code.Engine;
 
-public final class Calc implements Game {
-    private int firstNum;
-    private int secondNum;
-    private String operator;
+public class Calc {
     public static void play() {
-        Calc game = new Calc();
+        final int calcQuestionsCount = 3;
         var task = "What is the result of the expression?";
-        Engine.getGameBody(game, task);
+        Engine.getGameBody(generateQuestionsAndAnswers(calcQuestionsCount), task);
     }
-    public String getQuestion() {
+    static String[][] generateQuestionsAndAnswers(int questionsCount) {
+        String[][] questionsAndAnswers = new String[2][questionsCount];
         final int calcBound = 100;
-        this.firstNum = Even.getRandomNumber(calcBound);
-        this.secondNum = Even.getRandomNumber(calcBound);
-        getRandomOperator();
-        var question = firstNum + " " + operator + " " + secondNum;
-        return question;
+        for (var i = 0; i < questionsCount; i++) {
+            var firstNum = Even.generateRandomNumber(calcBound);
+            var secondNum = Even.generateRandomNumber(calcBound);
+            var operator = generateRandomOperator();
+            questionsAndAnswers[0][i] = firstNum + " " + operator + " " + secondNum;
+            questionsAndAnswers[1][i] = "" + calculate(firstNum, secondNum, operator);
+        }
+        return questionsAndAnswers;
     }
-    public String getAnswer() {
+    static int calculate(int firstNum, int secondNum, String operator) {
         var answer = firstNum;
         switch (operator) {
             case "+":
@@ -35,16 +35,17 @@ public final class Calc implements Game {
             default:
                 break;
         }
-        return "" + answer;
+        return answer;
     }
-    void getRandomOperator() {
-        final int operatorCount = 3;
-        var num = Even.getRandomNumber(operatorCount);
-        this.operator = switch (num) {
+    static String generateRandomOperator() {
+        final int operatorsCount = 3;
+        var num = Even.generateRandomNumber(operatorsCount);
+        var operator = switch (num) {
             case 0 -> "+";
             case 1 -> "-";
             case 2 -> "*";
             default -> null;
         };
+        return operator;
     }
 }
