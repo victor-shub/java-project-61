@@ -15,23 +15,31 @@ public final class Progression {
         final int stepBound = 10;
         var skippedSeqNum = 0;
         for (var i = 0; i < Engine.QUESTIONS_COUNT; i++) {
-            var seqNum = Even.generateRandomNumber(firstNumBound);
-            var stepNum = Even.generateRandomNumber(stepBound);
+            int[] seqNums = generateRandomProgression(seqLength, firstNumBound, stepBound);
             var skipNum = Even.generateRandomNumber(seqLength);
             var question = new StringBuilder();
             for (var j = 0; j < seqLength; j++) {
                 if (j == skipNum) {
                     question.append(".. ");
-                    skippedSeqNum = seqNum;
+                    skippedSeqNum = seqNums[j];
                 } else {
-                    question.append(seqNum);
+                    question.append(seqNums[j]);
                     question.append(" ");
                 }
-                seqNum += stepNum;
             }
             questionsAndAnswers[0][i] = question.toString();
             questionsAndAnswers[1][i] = "" + skippedSeqNum;
         }
         return questionsAndAnswers;
+    }
+    static int[] generateRandomProgression(int seqLength, int firstNumBound, int stepBound) {
+        int[] progression = new int[seqLength];
+        var seqNum = Even.generateRandomNumber(firstNumBound);
+        var stepNum = Even.generateRandomNumber(stepBound);
+        for (var i = 0; i < seqLength; i++) {
+            progression[i] = seqNum;
+            seqNum += stepNum;
+        }
+        return progression;
     }
 }
