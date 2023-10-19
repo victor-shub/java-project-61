@@ -13,7 +13,7 @@ public final class Prime {
         for (var i = 0; i < Engine.questionsCount; i++) {
             var num = Even.generateRandomNumber(primeBound);
             questionsAndAnswers[0][i] = "" + num;
-            questionsAndAnswers[1][i] = Even.TrueOrFalseToYesOrNo(isPrime(num));
+            questionsAndAnswers[1][i] = Even.trueOrFalseToYesOrNo(isPrime(num));
         }
         return questionsAndAnswers;
     }

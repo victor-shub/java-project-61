@@ -19,14 +19,14 @@ public class Even {
         for (var i = 0; i < Engine.questionsCount; i++) {
             var num = generateRandomNumber(evenBound);
             questionsAndAnswers[0][i] = "" + num;
-            questionsAndAnswers[1][i] = TrueOrFalseToYesOrNo(isEven(num));
+            questionsAndAnswers[1][i] = trueOrFalseToYesOrNo(isEven(num));
         }
         return questionsAndAnswers;
     }
     static boolean isEven(int num) {
         return num % 2 == 0;
     }
-    static String TrueOrFalseToYesOrNo(boolean value) {
+    static String trueOrFalseToYesOrNo(boolean value) {
         if (value) {
             return "yes";
         }
