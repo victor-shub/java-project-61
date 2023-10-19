@@ -24,10 +24,7 @@ public class Even {
         return questionsAndAnswers;
     }
     static boolean isEven(int num) {
-        if (num % 2 == 0) {
-            return true;
-        }
-        return false;
+        return num % 2 == 0;
     }
     static String TrueOrFalseToYesOrNo(boolean value) {
         if (value) {
