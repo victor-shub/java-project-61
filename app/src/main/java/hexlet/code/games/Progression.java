@@ -4,18 +4,17 @@ import hexlet.code.Engine;
 
 public final class Progression {
     public static void play() {
-        final int progressionQuestionsCount = 3;
         var task = "What number is missing in the progression?";
-        Engine.getGameBody(generateQuestionsAndAnswers(progressionQuestionsCount), task);
+        Engine.getGameBody(generateQuestionsAndAnswers(), task);
     }
 
-    static String[][] generateQuestionsAndAnswers(int questionsCount) {
-        String[][] questionsAndAnswers = new String[2][questionsCount];
+    static String[][] generateQuestionsAndAnswers() {
+        String[][] questionsAndAnswers = new String[2][Engine.questionsCount];
         final int seqLength = 10;
         final int firstNumBound = 100;
         final int stepBound = 10;
         var skippedSeqNum = 0;
-        for (var i = 0; i < questionsCount; i++) {
+        for (var i = 0; i < Engine.questionsCount; i++) {
             var seqNum = Even.generateRandomNumber(firstNumBound);
             var stepNum = Even.generateRandomNumber(stepBound);
             var skipNum = Even.generateRandomNumber(seqLength);

@@ -4,14 +4,13 @@ import hexlet.code.Engine;
 
 public class Calc {
     public static void play() {
-        final int calcQuestionsCount = 3;
         var task = "What is the result of the expression?";
-        Engine.getGameBody(generateQuestionsAndAnswers(calcQuestionsCount), task);
+        Engine.getGameBody(generateQuestionsAndAnswers(), task);
     }
-    static String[][] generateQuestionsAndAnswers(int questionsCount) {
-        String[][] questionsAndAnswers = new String[2][questionsCount];
+    static String[][] generateQuestionsAndAnswers() {
+        String[][] questionsAndAnswers = new String[2][Engine.questionsCount];
         final int calcBound = 100;
-        for (var i = 0; i < questionsCount; i++) {
+        for (var i = 0; i < Engine.questionsCount; i++) {
             var firstNum = Even.generateRandomNumber(calcBound);
             var secondNum = Even.generateRandomNumber(calcBound);
             var operator = generateRandomOperator();

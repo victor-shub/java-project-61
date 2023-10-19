@@ -5,19 +5,18 @@ import hexlet.code.Engine;
 
 public class Even {
     public static void play() {
-        final int evenQuestionsCount = 3;
         var task = "Answer 'yes' if the number is even, otherwise answer 'no'.";
-        Engine.getGameBody(generateQuestionsAndAnswers(evenQuestionsCount), task);
+        Engine.getGameBody(generateQuestionsAndAnswers(), task);
     }
     static int generateRandomNumber(int bound) {
         Random r = new Random();
         var num = r.nextInt(bound);
         return num;
     }
-    static String[][] generateQuestionsAndAnswers(int questionsCount) {
-        String[][] questionsAndAnswers = new String[2][questionsCount];
+    static String[][] generateQuestionsAndAnswers() {
+        String[][] questionsAndAnswers = new String[2][Engine.questionsCount];
         final int evenBound = 1000;
-        for (var i = 0; i < questionsCount; i++) {
+        for (var i = 0; i < Engine.questionsCount; i++) {
             var num = generateRandomNumber(evenBound);
             questionsAndAnswers[0][i] = "" + num;
             questionsAndAnswers[1][i] = TrueOrFalseToYesOrNo(isEven(num));

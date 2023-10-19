@@ -3,6 +3,7 @@ package hexlet.code;
 import java.util.Scanner;
 
 public class Engine {
+    public static final int questionsCount = 3;
     public static void getGameBody(String[][] questionsAndAnswers, String task) {
         Scanner scannedName = new Scanner(System.in);
         System.out.println("Welcome to the Brain Games!");
@@ -11,7 +12,6 @@ public class Engine {
         System.out.println("Hello, " + userName + "!");
         System.out.println(task);
         var wrongAnswerMessage = "' is wrong answer ;(. Correct answer was '";
-        var questionsCount = questionsAndAnswers[0].length;
         for (var i = 0; i < questionsCount; i++) {
             var question = questionsAndAnswers[0][i];
             var correctAnswer = questionsAndAnswers[1][i];

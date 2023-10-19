@@ -4,14 +4,13 @@ import hexlet.code.Engine;
 
 public final class Prime {
     public static void play() {
-        final int primeQuestionsCount = 3;
         var task = "Answer 'yes' if given number is prime. Otherwise answer 'no'.";
-        Engine.getGameBody(generateQuestionsAndAnswers(primeQuestionsCount), task);
+        Engine.getGameBody(generateQuestionsAndAnswers(), task);
     }
-    static String[][] generateQuestionsAndAnswers(int questionsCount) {
-        String[][] questionsAndAnswers = new String[2][questionsCount];
+    static String[][] generateQuestionsAndAnswers() {
+        String[][] questionsAndAnswers = new String[2][Engine.questionsCount];
         final int primeBound = 1000;
-        for (var i = 0; i < questionsCount; i++) {
+        for (var i = 0; i < Engine.questionsCount; i++) {
             var num = Even.generateRandomNumber(primeBound);
             questionsAndAnswers[0][i] = "" + num;
             questionsAndAnswers[1][i] = Even.TrueOrFalseToYesOrNo(isPrime(num));
