@@ -7,7 +7,7 @@ import hexlet.code.games.GCD;
 import hexlet.code.games.Prime;
 import hexlet.code.games.Progression;
 
-class App {
+public class App {
     public static void main(String[] args) {
         Scanner scannedNumber = new Scanner(System.in);
         System.out.println("Please enter the game number and press Enter.");

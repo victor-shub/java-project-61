@@ -11,7 +11,7 @@ public class GCD {
         Engine.getGameBody(generateQuestionsAndAnswers(), task);
     }
 
-    static String[][] generateQuestionsAndAnswers() {
+    private static String[][] generateQuestionsAndAnswers() {
         String[][] questionsAndAnswers = new String[2][Engine.QUESTIONS_COUNT];
         for (var i = 0; i < Engine.QUESTIONS_COUNT; i++) {
             var firstNum = Utils.generateRandomInt(0, gcdBound);
@@ -22,7 +22,7 @@ public class GCD {
         return questionsAndAnswers;
     }
 
-    static int gcd(int firstNum, int secondNum) {
+    public static int gcd(int firstNum, int secondNum) {
         var b1 = BigInteger.valueOf(firstNum);
         var b2 = BigInteger.valueOf(secondNum);
         var gcd = b1.gcd(b2);

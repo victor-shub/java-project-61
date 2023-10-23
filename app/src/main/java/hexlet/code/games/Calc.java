@@ -11,7 +11,7 @@ public class Calc {
         Engine.getGameBody(generateQuestionsAndAnswers(), task);
     }
 
-    static String[][] generateQuestionsAndAnswers() {
+    private static String[][] generateQuestionsAndAnswers() {
         String[][] questionsAndAnswers = new String[2][Engine.QUESTIONS_COUNT];
         for (var i = 0; i < Engine.QUESTIONS_COUNT; i++) {
             var firstNum = Utils.generateRandomInt(0, calcBound);
@@ -23,7 +23,7 @@ public class Calc {
         return questionsAndAnswers;
     }
 
-    static int calculate(int firstNum, int secondNum, String operator) {
+    public static int calculate(int firstNum, int secondNum, String operator) {
         var answer = firstNum;
         switch (operator) {
             case "+":

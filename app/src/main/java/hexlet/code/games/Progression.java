@@ -14,7 +14,7 @@ public final class Progression {
         Engine.getGameBody(generateQuestionsAndAnswers(), task);
     }
 
-    static String[][] generateQuestionsAndAnswers() {
+    private static String[][] generateQuestionsAndAnswers() {
         String[][] questionsAndAnswers = new String[2][Engine.QUESTIONS_COUNT];
         for (var i = 0; i < Engine.QUESTIONS_COUNT; i++) {
             var seqNum = Utils.generateRandomInt(lowFirstNumBound, highFirstNumBound);
@@ -36,7 +36,7 @@ public final class Progression {
         return questionsAndAnswers;
     }
 
-    static int[] generateProgression(int seqNum, int stepNum, int seqLength) {
+    public static int[] generateProgression(int seqNum, int stepNum, int seqLength) {
         int[] progression = new int[seqLength];
         for (var i = 0; i < seqLength; i++) {
             progression[i] = seqNum;

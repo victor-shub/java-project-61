@@ -10,7 +10,7 @@ public class Even {
         Engine.getGameBody(generateQuestionsAndAnswers(), task);
     }
 
-    static String[][] generateQuestionsAndAnswers() {
+    private static String[][] generateQuestionsAndAnswers() {
         String[][] questionsAndAnswers = new String[2][Engine.QUESTIONS_COUNT];
         for (var i = 0; i < Engine.QUESTIONS_COUNT; i++) {
             var num = Utils.generateRandomInt(0, evenBound);
