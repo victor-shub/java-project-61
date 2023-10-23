@@ -6,9 +6,9 @@ import hexlet.code.Utils;
 public class Calc {
     private static final int CALC_BOUND = 100;
     private static final String[] OPERATORS = {"*", "-", "+"};
+    private static final String TASK = "What is the result of the expression?";
     public static void play() {
-        var task = "What is the result of the expression?";
-        Engine.getGameBody(generateQuestionsAndAnswers(), task);
+        Engine.getGameBody(generateQuestionsAndAnswers(), TASK);
     }
 
     private static String[][] generateQuestionsAndAnswers() {

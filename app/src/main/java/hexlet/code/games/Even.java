@@ -5,9 +5,9 @@ import hexlet.code.Utils;
 
 public class Even {
     private static final int EVEN_BOUND = 1000;
+    private static final String TASK = "Answer 'yes' if the number is even, otherwise answer 'no'.";
     public static void play() {
-        var task = "Answer 'yes' if the number is even, otherwise answer 'no'.";
-        Engine.getGameBody(generateQuestionsAndAnswers(), task);
+        Engine.getGameBody(generateQuestionsAndAnswers(), TASK);
     }
 
     private static String[][] generateQuestionsAndAnswers() {

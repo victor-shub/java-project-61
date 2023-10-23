@@ -5,9 +5,9 @@ import hexlet.code.Utils;
 
 public final class Prime {
     private static final int PRIME_BOUND = 1000;
+    private static final String TASK = "Answer 'yes' if given number is prime. Otherwise answer 'no'.";
     public static void play() {
-        var task = "Answer 'yes' if given number is prime. Otherwise answer 'no'.";
-        Engine.getGameBody(generateQuestionsAndAnswers(), task);
+        Engine.getGameBody(generateQuestionsAndAnswers(), TASK);
     }
     private static String[][] generateQuestionsAndAnswers() {
         String[][] questionsAndAnswers = new String[2][Engine.QUESTIONS_COUNT];
