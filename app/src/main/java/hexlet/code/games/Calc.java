@@ -4,6 +4,7 @@ import hexlet.code.Engine;
 
 public class Calc {
     private static final int calcBound = 100;
+    private static final String[] operators = {"*", "-", "+"};
     public static void play() {
         var task = "What is the result of the expression?";
         Engine.getGameBody(generateQuestionsAndAnswers(), task);
@@ -13,7 +14,7 @@ public class Calc {
         for (var i = 0; i < Engine.QUESTIONS_COUNT; i++) {
             var firstNum = Even.generateRandomNumber(calcBound);
             var secondNum = Even.generateRandomNumber(calcBound);
-            var operator = generateRandomOperator();
+            var operator = operators[Even.generateRandomNumber(operators.length)];
             questionsAndAnswers[0][i] = firstNum + " " + operator + " " + secondNum;
             questionsAndAnswers[1][i] = "" + calculate(firstNum, secondNum, operator);
         }
@@ -35,16 +36,5 @@ public class Calc {
                 break;
         }
         return answer;
-    }
-    static String generateRandomOperator() {
-        final int operatorsCount = 3;
-        var num = Even.generateRandomNumber(operatorsCount);
-        var operator = switch (num) {
-            case 0 -> "+";
-            case 1 -> "-";
-            case 2 -> "*";
-            default -> null;
-        };
-        return operator;
     }
 }
