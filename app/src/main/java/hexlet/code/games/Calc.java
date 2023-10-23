@@ -1,6 +1,7 @@
 package hexlet.code.games;
 
 import hexlet.code.Engine;
+import hexlet.code.Utils;
 
 public class Calc {
     private static final int calcBound = 100;
@@ -12,9 +13,9 @@ public class Calc {
     static String[][] generateQuestionsAndAnswers() {
         String[][] questionsAndAnswers = new String[2][Engine.QUESTIONS_COUNT];
         for (var i = 0; i < Engine.QUESTIONS_COUNT; i++) {
-            var firstNum = Even.generateRandomNumber(calcBound);
-            var secondNum = Even.generateRandomNumber(calcBound);
-            var operator = operators[Even.generateRandomNumber(operators.length)];
+            var firstNum = Utils.generateRandomInt(0, calcBound);
+            var secondNum = Utils.generateRandomInt(0, calcBound);
+            var operator = operators[Utils.generateRandomInt(0, operators.length)];
             questionsAndAnswers[0][i] = firstNum + " " + operator + " " + secondNum;
             questionsAndAnswers[1][i] = "" + calculate(firstNum, secondNum, operator);
         }

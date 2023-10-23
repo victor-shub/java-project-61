@@ -1,7 +1,7 @@
 package hexlet.code.games;
 
-import java.util.Random;
 import hexlet.code.Engine;
+import hexlet.code.Utils;
 
 public class Even {
     private static final int evenBound = 1000;
@@ -9,27 +9,14 @@ public class Even {
         var task = "Answer 'yes' if the number is even, otherwise answer 'no'.";
         Engine.getGameBody(generateQuestionsAndAnswers(), task);
     }
-    static int generateRandomNumber(int bound) {
-        Random r = new Random();
-        var num = r.nextInt(bound);
-        return num;
-    }
+
     static String[][] generateQuestionsAndAnswers() {
         String[][] questionsAndAnswers = new String[2][Engine.QUESTIONS_COUNT];
         for (var i = 0; i < Engine.QUESTIONS_COUNT; i++) {
-            var num = generateRandomNumber(evenBound);
+            var num = Utils.generateRandomInt(0, evenBound);
             questionsAndAnswers[0][i] = "" + num;
-            questionsAndAnswers[1][i] = trueOrFalseToYesOrNo(isEven(num));
+            questionsAndAnswers[1][i] = Utils.booleanToYesOrNo(num % 2 == 0);
         }
         return questionsAndAnswers;
-    }
-    static boolean isEven(int num) {
-        return num % 2 == 0;
-    }
-    static String trueOrFalseToYesOrNo(boolean value) {
-        if (value) {
-            return "yes";
-        }
-        return "no";
     }
 }

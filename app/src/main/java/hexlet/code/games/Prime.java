@@ -1,6 +1,7 @@
 package hexlet.code.games;
 
 import hexlet.code.Engine;
+import hexlet.code.Utils;
 
 public final class Prime {
     private static final int primeBound = 1000;
@@ -11,9 +12,9 @@ public final class Prime {
     static String[][] generateQuestionsAndAnswers() {
         String[][] questionsAndAnswers = new String[2][Engine.QUESTIONS_COUNT];
         for (var i = 0; i < Engine.QUESTIONS_COUNT; i++) {
-            var num = Even.generateRandomNumber(primeBound);
+            var num = Utils.generateRandomInt(2, primeBound);
             questionsAndAnswers[0][i] = "" + num;
-            questionsAndAnswers[1][i] = Even.trueOrFalseToYesOrNo(isPrime(num));
+            questionsAndAnswers[1][i] = Utils.booleanToYesOrNo(isPrime(num));
         }
         return questionsAndAnswers;
     }

@@ -2,6 +2,7 @@ package hexlet.code.games;
 
 import java.math.BigInteger;
 import hexlet.code.Engine;
+import hexlet.code.Utils;
 
 public class GCD {
     private static final int gcdBound = 1000;
@@ -12,8 +13,8 @@ public class GCD {
     static String[][] generateQuestionsAndAnswers() {
         String[][] questionsAndAnswers = new String[2][Engine.QUESTIONS_COUNT];
         for (var i = 0; i < Engine.QUESTIONS_COUNT; i++) {
-            var firstNum = Even.generateRandomNumber(gcdBound);
-            var secondNum = Even.generateRandomNumber(gcdBound);
+            var firstNum = Utils.generateRandomInt(0, gcdBound);
+            var secondNum = Utils.generateRandomInt(0, gcdBound);
             questionsAndAnswers[0][i] = firstNum + " " + secondNum;
             questionsAndAnswers[1][i] = "" + gcd(firstNum, secondNum);
         }
