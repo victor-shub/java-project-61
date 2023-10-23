@@ -35,6 +35,7 @@ public final class Progression {
         }
         return questionsAndAnswers;
     }
+
     static int[] generateProgression(int seqNum, int stepNum, int seqLength) {
         int[] progression = new int[seqLength];
         for (var i = 0; i < seqLength; i++) {

@@ -18,6 +18,7 @@ public final class Prime {
         }
         return questionsAndAnswers;
     }
+
     static boolean isPrime(int num) {
         if (num > 2 && num % 2 == 0) {
             return false;

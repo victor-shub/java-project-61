@@ -10,6 +10,7 @@ public class Calc {
         var task = "What is the result of the expression?";
         Engine.getGameBody(generateQuestionsAndAnswers(), task);
     }
+
     static String[][] generateQuestionsAndAnswers() {
         String[][] questionsAndAnswers = new String[2][Engine.QUESTIONS_COUNT];
         for (var i = 0; i < Engine.QUESTIONS_COUNT; i++) {
@@ -21,6 +22,7 @@ public class Calc {
         }
         return questionsAndAnswers;
     }
+
     static int calculate(int firstNum, int secondNum, String operator) {
         var answer = firstNum;
         switch (operator) {

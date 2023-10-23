@@ -10,6 +10,7 @@ public class GCD {
         var task = "Find the greatest common divisor of given numbers.";
         Engine.getGameBody(generateQuestionsAndAnswers(), task);
     }
+
     static String[][] generateQuestionsAndAnswers() {
         String[][] questionsAndAnswers = new String[2][Engine.QUESTIONS_COUNT];
         for (var i = 0; i < Engine.QUESTIONS_COUNT; i++) {
@@ -20,6 +21,7 @@ public class GCD {
         }
         return questionsAndAnswers;
     }
+
     static int gcd(int firstNum, int secondNum) {
         var b1 = BigInteger.valueOf(firstNum);
         var b2 = BigInteger.valueOf(secondNum);
