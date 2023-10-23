@@ -4,8 +4,8 @@ import hexlet.code.Engine;
 import hexlet.code.Utils;
 
 public class Calc {
-    private static final int calcBound = 100;
-    private static final String[] operators = {"*", "-", "+"};
+    private static final int CALC_BOUND = 100;
+    private static final String[] OPERATORS = {"*", "-", "+"};
     public static void play() {
         var task = "What is the result of the expression?";
         Engine.getGameBody(generateQuestionsAndAnswers(), task);
@@ -14,9 +14,9 @@ public class Calc {
     private static String[][] generateQuestionsAndAnswers() {
         String[][] questionsAndAnswers = new String[2][Engine.QUESTIONS_COUNT];
         for (var i = 0; i < Engine.QUESTIONS_COUNT; i++) {
-            var firstNum = Utils.generateRandomInt(0, calcBound);
-            var secondNum = Utils.generateRandomInt(0, calcBound);
-            var operator = operators[Utils.generateRandomInt(0, operators.length)];
+            var firstNum = Utils.generateRandomInt(0, CALC_BOUND);
+            var secondNum = Utils.generateRandomInt(0, CALC_BOUND);
+            var operator = OPERATORS[Utils.generateRandomInt(0, OPERATORS.length)];
             questionsAndAnswers[0][i] = firstNum + " " + operator + " " + secondNum;
             questionsAndAnswers[1][i] = "" + calculate(firstNum, secondNum, operator);
         }
