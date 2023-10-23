@@ -16,7 +16,6 @@ public final class Progression {
 
     static String[][] generateQuestionsAndAnswers() {
         String[][] questionsAndAnswers = new String[2][Engine.QUESTIONS_COUNT];
-        var skippedSeqNum = 0;
         for (var i = 0; i < Engine.QUESTIONS_COUNT; i++) {
             var seqNum = Utils.generateRandomInt(lowFirstNumBound, highFirstNumBound);
             var stepNum = Utils.generateRandomInt(lowStepBound, highStepBound);
@@ -26,14 +25,13 @@ public final class Progression {
             for (var j = 0; j < gameSeqLength; j++) {
                 if (j == skipNum) {
                     question.append(".. ");
-                    skippedSeqNum = seqNums[j];
                 } else {
                     question.append(seqNums[j]);
                     question.append(" ");
                 }
             }
             questionsAndAnswers[0][i] = question.toString();
-            questionsAndAnswers[1][i] = "" + skippedSeqNum;
+            questionsAndAnswers[1][i] = "" + seqNums[skipNum];
         }
         return questionsAndAnswers;
     }
