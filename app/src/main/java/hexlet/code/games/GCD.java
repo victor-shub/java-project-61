@@ -4,13 +4,13 @@ import java.math.BigInteger;
 import hexlet.code.Engine;
 
 public class GCD {
+    private static final int gcdBound = 1000;
     public static void play() {
         var task = "Find the greatest common divisor of given numbers.";
         Engine.getGameBody(generateQuestionsAndAnswers(), task);
     }
     static String[][] generateQuestionsAndAnswers() {
         String[][] questionsAndAnswers = new String[2][Engine.QUESTIONS_COUNT];
-        final int gcdBound = 1000;
         for (var i = 0; i < Engine.QUESTIONS_COUNT; i++) {
             var firstNum = Even.generateRandomNumber(gcdBound);
             var secondNum = Even.generateRandomNumber(gcdBound);

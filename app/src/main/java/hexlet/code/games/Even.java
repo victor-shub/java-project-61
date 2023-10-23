@@ -4,6 +4,7 @@ import java.util.Random;
 import hexlet.code.Engine;
 
 public class Even {
+    private static final int evenBound = 1000;
     public static void play() {
         var task = "Answer 'yes' if the number is even, otherwise answer 'no'.";
         Engine.getGameBody(generateQuestionsAndAnswers(), task);
@@ -15,7 +16,6 @@ public class Even {
     }
     static String[][] generateQuestionsAndAnswers() {
         String[][] questionsAndAnswers = new String[2][Engine.QUESTIONS_COUNT];
-        final int evenBound = 1000;
         for (var i = 0; i < Engine.QUESTIONS_COUNT; i++) {
             var num = generateRandomNumber(evenBound);
             questionsAndAnswers[0][i] = "" + num;

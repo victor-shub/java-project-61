@@ -3,13 +3,13 @@ package hexlet.code.games;
 import hexlet.code.Engine;
 
 public class Calc {
+    private static final int calcBound = 100;
     public static void play() {
         var task = "What is the result of the expression?";
         Engine.getGameBody(generateQuestionsAndAnswers(), task);
     }
     static String[][] generateQuestionsAndAnswers() {
         String[][] questionsAndAnswers = new String[2][Engine.QUESTIONS_COUNT];
-        final int calcBound = 100;
         for (var i = 0; i < Engine.QUESTIONS_COUNT; i++) {
             var firstNum = Even.generateRandomNumber(calcBound);
             var secondNum = Even.generateRandomNumber(calcBound);
