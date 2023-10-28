@@ -16,8 +16,12 @@ public class Even {
         for (var i = 0; i < Engine.QUESTIONS_COUNT; i++) {
             var num = Utils.generateRandomInt(0, EVEN_BOUND);
             questionsAndAnswers[0][i] = "" + num;
-            questionsAndAnswers[1][i] = Utils.booleanToYesOrNo(num % 2 == 0);
+            questionsAndAnswers[1][i] = Utils.booleanToYesOrNo(isEven(num));
         }
         return questionsAndAnswers;
+    }
+
+    private static boolean isEven(int num) {
+        return num % 2 == 0;
     }
 }
