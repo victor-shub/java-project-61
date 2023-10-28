@@ -20,27 +20,19 @@ public final class Progression {
         for (var i = 0; i < Engine.QUESTIONS_COUNT; i++) {
             var seqNum = Utils.generateRandomInt(LOW_FIRST_NUM_BOUND, HIGH_FIRST_NUM_BOUND);
             var stepNum = Utils.generateRandomInt(LOW_STEP_BOUND, HIGH_STEP_BOUND);
-            int[] seqNums = generateProgression(seqNum, stepNum, SEQ_LENGTH);
+            var seqNums = generateProgression(seqNum, stepNum, SEQ_LENGTH);
             var skipNum = Utils.generateRandomInt(0, SEQ_LENGTH);
-            var question = new StringBuilder();
-            for (var j = 0; j < SEQ_LENGTH; j++) {
-                if (j == skipNum) {
-                    question.append(".. ");
-                } else {
-                    question.append(seqNums[j]);
-                    question.append(" ");
-                }
-            }
-            questionsAndAnswers[0][i] = question.toString();
-            questionsAndAnswers[1][i] = "" + seqNums[skipNum];
+            questionsAndAnswers[1][i] = seqNums[skipNum];
+            seqNums[skipNum] = "..";
+            questionsAndAnswers[0][i] = String.join(" ", seqNums);
         }
         return questionsAndAnswers;
     }
 
-    public static int[] generateProgression(int seqNum, int stepNum, int seqLength) {
-        int[] progression = new int[seqLength];
+    public static String[] generateProgression(int seqNum, int stepNum, int seqLength) {
+        String[] progression = new String[seqLength];
         for (var i = 0; i < seqLength; i++) {
-            progression[i] = seqNum;
+            progression[i] = "" + seqNum;
             seqNum += stepNum;
         }
         return progression;
