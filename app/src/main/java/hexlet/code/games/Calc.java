@@ -24,7 +24,7 @@ public class Calc {
         return questionsAndAnswers;
     }
 
-    public static int calculate(int firstNum, int secondNum, String operator) {
+    public static Integer calculate(int firstNum, int secondNum, String operator) {
         var answer = firstNum;
         switch (operator) {
             case "+":
@@ -37,7 +37,7 @@ public class Calc {
                 answer *= secondNum;
                 break;
             default:
-                break;
+                return null;
         }
         return answer;
     }
