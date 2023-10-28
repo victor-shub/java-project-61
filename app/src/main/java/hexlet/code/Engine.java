@@ -4,6 +4,7 @@ import java.util.Scanner;
 
 public class Engine {
     public static final int QUESTIONS_COUNT = 3;
+
     public static void getGameBody(String[][] questionsAndAnswers, String task) {
         Scanner scannedName = new Scanner(System.in);
         System.out.println("Welcome to the Brain Games!");

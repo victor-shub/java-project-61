@@ -6,6 +6,7 @@ import hexlet.code.Utils;
 public final class Prime {
     private static final int PRIME_BOUND = 1000;
     private static final String TASK = "Answer 'yes' if given number is prime. Otherwise answer 'no'.";
+
     public static void play() {
         Engine.getGameBody(generateQuestionsAndAnswers(), TASK);
     }

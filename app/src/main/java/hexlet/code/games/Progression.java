@@ -10,6 +10,7 @@ public final class Progression {
     private static final int LOW_STEP_BOUND = -10;
     private static final int HIGH_STEP_BOUND = 10;
     private static final String TASK = "What number is missing in the progression?";
+
     public static void play() {
         Engine.getGameBody(generateQuestionsAndAnswers(), TASK);
     }

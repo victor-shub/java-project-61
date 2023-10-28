@@ -7,6 +7,7 @@ import hexlet.code.Utils;
 public class GCD {
     private static final int GCD_BOUND = 1000;
     private static final String TASK = "Find the greatest common divisor of given numbers.";
+
     public static void play() {
         Engine.getGameBody(generateQuestionsAndAnswers(), TASK);
     }
