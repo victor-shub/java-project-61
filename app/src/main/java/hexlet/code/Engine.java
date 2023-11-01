@@ -6,10 +6,10 @@ public class Engine {
     public static final int QUESTIONS_COUNT = 3;
 
     public static void getGameBody(String[][] questionsAndAnswers, String task) {
-        Scanner scannedName = new Scanner(System.in);
+        Scanner scanner = new Scanner(System.in);
         System.out.println("Welcome to the Brain Games!");
         System.out.print("May I have your name? ");
-        String userName = scannedName.next();
+        String userName = scanner.next();
         System.out.println("Hello, " + userName + "!");
         System.out.println(task);
         var wrongAnswerMessage = "' is wrong answer ;(. Correct answer was '";
