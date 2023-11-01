@@ -14,7 +14,7 @@ public final class Prime {
         String[][] questionsAndAnswers = new String[2][Engine.QUESTIONS_COUNT];
         for (var i = 0; i < Engine.QUESTIONS_COUNT; i++) {
             var num = Utils.generateRandomInt(2, PRIME_BOUND);
-            questionsAndAnswers[0][i] = "" + num;
+            questionsAndAnswers[0][i] = String.valueOf(num);
             questionsAndAnswers[1][i] = Utils.booleanToYesOrNo(isPrime(num));
         }
         return questionsAndAnswers;

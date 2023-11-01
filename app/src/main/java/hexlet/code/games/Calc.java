@@ -19,21 +19,17 @@ public class Calc {
             var secondNum = Utils.generateRandomInt(0, CALC_BOUND);
             var operator = OPERATORS[Utils.generateRandomInt(0, OPERATORS.length)];
             questionsAndAnswers[0][i] = firstNum + " " + operator + " " + secondNum;
-            questionsAndAnswers[1][i] = "" + calculate(firstNum, secondNum, operator);
+            questionsAndAnswers[1][i] = calculate(firstNum, secondNum, operator).toString();
         }
         return questionsAndAnswers;
     }
 
     public static Integer calculate(int firstNum, int secondNum, String operator) {
-        switch (operator) {
-            case "+":
-                return firstNum + secondNum;
-            case "-":
-                return firstNum - secondNum;
-            case "*":
-                return firstNum * secondNum;
-            default:
-                return null;
-        }
+        return switch (operator) {
+            case "+" -> firstNum + secondNum;
+            case "-" -> firstNum - secondNum;
+            case "*" -> firstNum * secondNum;
+            default -> null;
+        };
     }
 }

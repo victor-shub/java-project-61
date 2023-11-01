@@ -32,7 +32,7 @@ public final class Progression {
     public static String[] generateProgression(int seqNum, int stepNum, int seqLength) {
         String[] progression = new String[seqLength];
         for (var i = 0; i < seqLength; i++) {
-            progression[i] = "" + seqNum;
+            progression[i] = String.valueOf(seqNum);
             seqNum += stepNum;
         }
         return progression;

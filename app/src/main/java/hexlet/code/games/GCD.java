@@ -18,7 +18,7 @@ public class GCD {
             var firstNum = Utils.generateRandomInt(0, GCD_BOUND);
             var secondNum = Utils.generateRandomInt(0, GCD_BOUND);
             questionsAndAnswers[0][i] = firstNum + " " + secondNum;
-            questionsAndAnswers[1][i] = "" + gcd(firstNum, secondNum);
+            questionsAndAnswers[1][i] = String.valueOf(gcd(firstNum, secondNum));
         }
         return questionsAndAnswers;
     }
