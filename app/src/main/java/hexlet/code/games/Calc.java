@@ -25,20 +25,15 @@ public class Calc {
     }
 
     public static Integer calculate(int firstNum, int secondNum, String operator) {
-        var answer = firstNum;
         switch (operator) {
             case "+":
-                answer += secondNum;
-                break;
+                return firstNum + secondNum;
             case "-":
-                answer -= secondNum;
-                break;
+                return firstNum - secondNum;
             case "*":
-                answer *= secondNum;
-                break;
+                return firstNum * secondNum;
             default:
                 return null;
         }
-        return answer;
     }
 }
